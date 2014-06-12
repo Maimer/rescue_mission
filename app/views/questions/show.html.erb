@@ -1,0 +1,26 @@
+<h4><%= @question.title %></h4>
+
+<br><br>
+
+<%= @question.description %>
+
+<br><br>
+
+<h4>Add an Answer</h4>
+
+<br><br>
+
+<%= form_for [@question, @answer] do |f| %>
+  <%= f.label :description %>:
+  <%= f.text_area :description %><br>
+
+  <%= f.submit %>
+<% end %>
+
+<br><br>
+
+<% @question.answers.each do |aanswer| %>
+  <p>
+    <%= "#{answer.user} says: #{answer.description} (at #{answer.created_at})" %>
+  </p>
+<% end %>
