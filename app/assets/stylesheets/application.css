@@ -13,3 +13,77 @@
  *= require_tree .
  *= require_self
  */
+
+
+body {
+  background-image: url('/images/stardust.png');
+  color: #FFFFFF;
+}
+
+a,
+a:visited {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #18A7B5;
+}
+
+input {
+  color: #18A7B5;
+  background-color: #444;
+  border: 1px solid #555;
+  padding: 5px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.teal {
+  color: #18A7B5;
+}
+
+.right {
+  float:right;
+}
+
+.indent {
+  margin-left: 40px;
+}
+
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+.main {
+  padding: 35px;
+}
+
+.top-bar {
+  background-color: #3C3C3C;
+}
+
+.top-bar-section {
+  display: inline-block;
+  float: right;
+}
+
+.top-bar-section li {
+  display: inline-block;
+  margin-left: 1em;
+}
+
+.logo {
+  float: left;
+  display: inline-block;
+  margin: 1em 0;
+}
+
+.flash {
+  padding: 1em;
+  background-color: #3B9089;
+}
