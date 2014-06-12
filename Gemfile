@@ -41,7 +41,7 @@ gem 'spring',        group: :development
 gem 'omniauth-github'
 
 group :test, :development do
-  gem 'dotenv'
+  gem 'dotenv-rails'
   gem 'capybara'
   gem 'pry-rails'
   gem 'rspec-rails'

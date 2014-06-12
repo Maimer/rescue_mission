@@ -14,6 +14,8 @@ class AnswersController < ApplicationController
 
     @answer.question = @question
 
+    @answer.user_id = session[:user_id]
+
     if @answer.save
       redirect_to "/questions/#{@question.id}"
     else
@@ -29,6 +31,6 @@ class AnswersController < ApplicationController
   private
 
   def answer_params
-    params.require(:answer).permit(:description, :user_id)
+    params.require(:answer).permit(:description)
   end
 end

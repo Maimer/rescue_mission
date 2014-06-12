@@ -19,7 +19,7 @@
 
 <br><br>
 
-<% @question.answers.each do |aanswer| %>
+<% @question.answers.each do |answer| %>
   <p>
     <%= "#{answer.user} says: #{answer.description} (at #{answer.created_at})" %>
   </p>

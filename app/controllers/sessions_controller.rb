@@ -6,6 +6,6 @@ class SessionsController < ApplicationController
     set_current_user(user)
     flash[:notice] = "You're now signed in as #{user.username}!"
 
-    redirect_to :back
+    redirect_to '/'
   end
 end
