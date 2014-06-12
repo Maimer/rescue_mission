@@ -15,7 +15,7 @@ class QuestionsController < ApplicationController
       redirect_to @question
     else
       flash.now[:notice] = "Your question was not succesfully submitted."
-      render :new
+      redirect_to @question
     end
   end
 
