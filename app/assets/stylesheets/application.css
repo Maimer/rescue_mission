@@ -16,7 +16,7 @@
 
 
 body {
-  background-image: url('/images/stardust.png');
+  background-color: #333333;
   color: #FFFFFF;
 }
 
@@ -31,6 +31,13 @@ a:hover {
 }
 
 input {
+  color: #18A7B5;
+  background-color: #444;
+  border: 1px solid #555;
+  padding: 5px;
+}
+
+textarea {
   color: #18A7B5;
   background-color: #444;
   border: 1px solid #555;
