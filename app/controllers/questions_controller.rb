@@ -40,6 +40,16 @@ class QuestionsController < ApplicationController
     end
   end
 
+  def destroy
+    @question = Question.find(params[:id])
+    if current_user.id == @question.user_id
+      @question.answers.destroy_all
+      @question.destroy
+    end
+
+    redirect_to '/'
+  end
+
   private
 
   def question_params
