@@ -1,4 +1,4 @@
-<h4><%= @question.title %></h4>
+<h4 class="teal"><%= @question.title %></h4>
 
 <br><br>
 
@@ -6,7 +6,7 @@
 
 <br><br>
 
-<h4>Add an Answer</h4>
+<h4 class="teal">Add an Answer</h4>
 
 <br><br>
 
@@ -20,7 +20,9 @@
 <br><br>
 
 <% @question.answers.each do |answer| %>
-  <p>
-    <%= "#{answer.user} says: #{answer.description} (at #{answer.created_at})" %>
-  </p>
+  <li>
+    <%= answer.user.username %> -
+    <span class="teal"><%= answer.description %> - </span>
+    <%= answer.created_at.strftime("at %I:%M%p") %>
+  </li>
 <% end %>

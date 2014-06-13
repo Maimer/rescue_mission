@@ -1,4 +1,4 @@
-<h4>Add a Question</h4>
+<h4 class="teal">Add a Question</h4>
 
 <br><br>
 
@@ -16,6 +16,6 @@
 
 <ul>
   <% @questions.each do |q| %>
-    <li> <%= q.title %> </li>
+    <li> <%= link_to q.title, q %> </li>
   <% end %>
 </ul>
