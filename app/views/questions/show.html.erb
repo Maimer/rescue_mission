@@ -6,7 +6,7 @@
 
 <br><br>
 
-<% if current_user.id == @question.user_id %>
+<% if current_user != nil && current_user.id == @question.user_id %>
 
   <%=  link_to 'Edit your Question', edit_question_path(@question) %>
 
@@ -37,11 +37,14 @@
 
 <% @answers.each do |answer| %>
   <li>
-    <% if @best == false %>
-      <%= link_to 'Select as Best Answer', edit_question_answer_path(@question, answer) %><br>
-    <% elsif answer.best == true %>
-      BEST ANSWER
-    <% end %>
+      <% if @best == false %>
+        <% if current_user != nil && current_user.id == @question.user_id %>
+          <%= link_to 'Select as Best Answer', edit_question_answer_path(@question, answer) %>
+          <br>
+        <% end %>
+      <% elsif answer.best == true %>
+        BEST ANSWER
+      <% end %>
     <%= answer.user.username %> -
     <span class="teal"><%= answer.description %> - </span>
     <%= answer.created_at.strftime("at %I:%M%p") %>

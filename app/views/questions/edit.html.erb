@@ -1,4 +1,4 @@
-<% if current_user.id == @question.user_id %>
+<% if current_user != nil && current_user.id == @question.user_id %>
 
   <h4 class="teal">Edit your Question</h4>
 
