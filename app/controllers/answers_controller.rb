@@ -28,6 +28,18 @@ class AnswersController < ApplicationController
 
   end
 
+  def edit
+    @answer = Answer.find(params[:id])
+    @question = Question.find(params[:question_id])
+    @answer.update(best: true)
+
+    redirect_to question_path(@question), method: :patch
+  end
+
+  def update
+
+  end
+
   private
 
   def answer_params

@@ -24,6 +24,13 @@ class QuestionsController < ApplicationController
   def show
     @question = Question.find(params[:id])
     @answer = Answer.new
+    @answers = @question.answers.all.order('best DESC')
+    @best = false
+    @question.answers.each do |answer|
+      if answer.best == true
+        @best = true
+      end
+    end
   end
 
   def edit
