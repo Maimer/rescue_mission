@@ -1,0 +1,19 @@
+<% if current_user.id == @question.user_id %>
+
+  <h4 class="teal">Edit your Question</h4>
+
+  <br>
+
+  <%= form_for @question,  url: question_path(@question), method: :patch do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br>
+
+    <%= f.label :description %>:
+    <%= f.text_area :description %><br>
+
+    <%= f.submit %>
+  <% end %>
+
+  <br>
+
+<% end %>

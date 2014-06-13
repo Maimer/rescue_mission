@@ -6,18 +6,29 @@
 
 <br><br>
 
-<h4 class="teal">Add an Answer</h4>
+<% if current_user.id == @question.user_id %>
 
-<br><br>
+  <%=  link_to 'Edit your Question', edit_question_path(@question) %>
 
-<%= form_for [@question, @answer] do |f| %>
-  <%= f.label :description %>:
-  <%= f.text_area :description %><br>
-
-  <%= f.submit %>
 <% end %>
 
-<br><br>
+
+<% if signed_in? %>
+
+  <h4 class="teal">Add an Answer</h4>
+
+  <br><br>
+
+  <%= form_for [@question, @answer] do |f| %>
+    <%= f.label :description %>:
+    <%= f.text_area :description %><br>
+
+    <%= f.submit %>
+  <% end %>
+
+  <br><br>
+
+<% end %>
 
 <% @question.answers.each do |answer| %>
   <li>

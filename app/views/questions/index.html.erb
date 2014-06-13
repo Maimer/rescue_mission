@@ -1,18 +1,24 @@
+<% if signed_in? %>
+
 <h4 class="teal">Add a Question</h4>
 
-<br><br>
+<br>
 
-<%= form_for @question do |f| %>
-  <%= f.label :title %>:
-  <%= f.text_field :title %><br>
+  <%= form_for @question do |f| %>
+    <%= f.label :title %>:
+    <%= f.text_field :title %><br>
 
-  <%= f.label :description %>:
-  <%= f.text_area :description %><br>
+    <%= f.label :description %>:
+    <%= f.text_area :description %><br>
 
-  <%= f.submit %>
+    <%= f.submit %>
+  <% end %>
+
+  <br>
+
 <% end %>
 
-<br><br>
+<h4 class="teal">View a Question</h4>
 
 <ul>
   <% @questions.each do |q| %>
